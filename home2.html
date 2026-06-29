@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InkNest Studio | Editorial & Publishing Illustration (Home 2)</title>
+    <meta name="description"
+        content="Bespoke editorial illustrations and book cover designs. Alternative showcase layout for publishers, editors, and authors.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <style>
+        .hero-section-2 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-top: var(--navbar-height);
+            overflow: hidden;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(20, 184, 166, 0.1), transparent 70%);
+        }
+
+        .hero-glow-2 {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .showcase-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 3rem;
+            margin-top: -100px;
+            z-index: 10;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .stat-item h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            height: 100%;
+            transition: var(--transition-smooth);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-10px);
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            color: var(--glass-border);
+            margin-bottom: 1rem;
+        }
+
+        .home2-block {
+            margin-top: 0;
+            padding-top: 2.5rem;
+        }
+
+        .process-card,
+        .package-card,
+        .cta-panel {
+            background: var(--secondary-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            height: 100%;
+            transition: var(--transition-smooth);
+        }
+
+        .process-card:hover,
+        .package-card:hover,
+        .cta-panel:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-blue);
+        }
+
+        .process-step {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .package-badge {
+            font-size: 0.8rem;
+            background: rgba(79, 70, 229, 0.12);
+            border: 1px solid rgba(79, 70, 229, 0.4);
+            color: var(--accent-blue);
+            border-radius: 999px;
+            padding: 0.35rem 0.8rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .package-price {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .package-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .metric-tile {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero2-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hero2-cta-group .hero2-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .hero2-cta-group .hero2-btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: #fff;
+            border: 1px solid transparent;
+        }
+
+        .hero2-cta-group .hero2-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+            filter: brightness(1.1);
+            color: #fff;
+        }
+
+        .hero2-cta-group .hero2-btn-outline {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+        }
+
+        .hero2-cta-group .hero2-btn-outline:hover {
+            background: var(--accent-blue);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+        }
+
+        .home2-booking-cta .btn-outline-info {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+            transition: var(--transition-smooth);
+        }
+
+        .home2-booking-cta .btn-outline-info:hover {
+            background: var(--accent-blue);
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+        }
+
+        .home2-image-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+            min-height: 260px;
+            background: #081223;
+        }
+
+        .home2-image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .home2-image-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(4, 12, 24, 0.2) 0%, rgba(4, 12, 24, 0.75) 100%);
+        }
+
+        .home2-image-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .home2-image-label {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            z-index: 1;
+            margin: 0;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {
+            .home2-audio-copy {
+                text-align: center;
+            }
+
+            .home2-audio-copy ul {
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .home2-block {
+                margin-top: 0;
+                padding-top: 1.5rem;
+            }
+
+            .process-card,
+            .package-card,
+            .cta-panel {
+                text-align: center;
+            }
+
+            .home2-booking-cta .d-flex.flex-wrap {
+                flex-direction: column;
+            }
+
+            .home2-booking-cta .d-flex.flex-wrap .btn {
+                width: 100%;
+            }
+
+            .home2-booking-cta .metric-tile {
+                padding: 1rem;
+            }
+
+            .home2-booking-cta .metric-tile h4 {
+                font-size: 1.25rem;
+            }
+
+            .home2-booking-cta .metric-tile small {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" width="180" height="50" style="max-width: 180px; max-height: 50px;">
+                <defs>
+                    <linearGradient id="logo-grad-nav" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#4F46E5"/>
+                        <stop offset="100%" stop-color="#FF5A5F"/>
+                    </linearGradient>
+                </defs>
+                <g transform="translate(5, 5)">
+                    <path d="M 5,28 C 12,24 20,28 20,28 C 20,28 28,24 35,28 L 35,16 C 28,12 20,16 20,16 C 20,16 12,12 5,16 Z" fill="none" stroke="url(#logo-grad-nav)" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M 20,16 L 20,28" stroke="url(#logo-grad-nav)" stroke-width="2"/>
+                    <path d="M 2,34 C 10,31 25,37 38,33" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M 20,6 L 24,16 L 20,26 L 16,16 Z" fill="url(#logo-grad-nav)"/>
+                    <line x1="20" y1="12" x2="20" y2="24" stroke="#FAFAFA" stroke-width="1.5"/>
+                    <circle cx="20" cy="12" r="1" fill="#FAFAFA"/>
+                </g>
+                <text x="50" y="28" font-family="'Manrope', sans-serif" font-size="20" font-weight="bold" fill="currentColor">InkNest</text>
+                <text x="50" y="38" font-family="'Manrope', sans-serif" font-size="8" letter-spacing="1.5" fill="#FF5A5F" font-weight="600">STUDIO</text>
+            </svg>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav mx-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                </ul>
+                <div class="navbar-nav align-items-center gap-2">
+                    
+                    <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section 2 (Centered Content) -->
+    <section class="hero-section-2" style="--hero-bg: url('https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=1600&fit=crop');">
+        <div class="hero-glow-2"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 text-center">
+                    <span class="badge bg-info text-dark rounded-pill px-4 py-2 mb-4">Bespoke Editorial Graphics</span>
+                    <h1 class="display-1 fw-bold mb-4">
+                        Visual Metaphors <br><span class="text-info">Illustrated.</span>
+                    </h1>
+                    <p class="lead text-muted mb-5 mx-auto" style="max-width: 700px;">
+                        The industry's most advanced illustration and book cover design studio. Narrative artwork meets award-winning creative direction to elevate your story's impact.
+                    </p>
+                    <div class="d-flex gap-3 justify-content-center hero2-cta-group">
+                        <a href="pricing.html" class="btn hero2-btn hero2-btn-primary px-5">View Our Tiers</a>
+                        <a href="services.html" class="btn hero2-btn hero2-btn-outline px-5">Explore Gallery</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Canvas Showcase Section -->
+    <section class="py-5 mt-2">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 home2-audio-copy">
+                    <h2 class="display-5 mb-4">The Editorial <span class="text-info">Canvas</span></h2>
+                    <p class="text-muted lead mb-4">Our custom pre-print configuration and digital painting systems guarantee your illustrations look brilliant, whether printed on coarse newsprint or loaded on ultra-high-resolution screens.
+                    </p>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-info me-2"></i> Custom-tailored sketching aligning with your article's theme</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-info me-2"></i> Extensive digital & traditional brush library (100k+ assets)</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-info me-2"></i> CMYK color profiling for press and digital screens</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass-panel p-5">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="mb-0">Creative Canvas v4.0</h5>
+                            <i class="bi bi-palette text-info"></i>
+                        </div>
+                        <div id="demo-waveform" class="waveform-container mb-4" style="height: 100px;"></div>
+                        <div class="d-flex align-items-center gap-3">
+                            <button class="btn btn-primary-glow rounded-circle p-3" title="Redraw Layout"><i
+                                    class="bi bi-magic fs-4"></i></button>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">Vector Rendering: The Global Economy</h6>
+                                <div class="progress bg-dark" style="height: 4px;">
+                                    <div class="progress-bar bg-info" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 mt-2">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-1">Industry Talk</h2>
+                <p class="text-muted">What the world's top editors and publishers are saying about InkNest.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <i class="bi bi-quote quote-icon"></i>
+                        <p class="mb-4">"My readers' engagement tripled within three months of switching our main cover art to an InkNest illustration. The visual depth is unmatched."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100"
+                                class="rounded-circle me-3" style="width: 50px; height: 50px;">
+                            <div>
+                                <h6 class="mb-0">Sarah Jenkins</h6>
+                                <small class="text-info">Art Director, The Daily Herald</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <i class="bi bi-quote quote-icon"></i>
+                        <p class="mb-4">"They don't just paint; they analyze the text. Every spot illustration perfectly aligns with our op-ed columns and opinion pages."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100"
+                                class="rounded-circle me-3" style="width: 50px; height: 50px;">
+                            <div>
+                                <h6 class="mb-0">Marcus Lowe</h6>
+                                <small class="text-info">Lead Editor, Global Press</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <i class="bi bi-quote quote-icon"></i>
+                        <p class="mb-4">"The collaboration dashboard was seamless. From initial pencil sketch to final color print, the process was completely professional."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100"
+                                class="rounded-circle me-3" style="width: 50px; height: 50px;">
+                            <div>
+                                <h6 class="mb-0">Elena Rodriguez</h6>
+                                <small class="text-info">Editorial Coordinator, Bookworks Publishing</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow -->
+    <section class="home2-block">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-1">How We Illustrate</h2>
+                <p class="text-muted mb-0">Three clean stages from strategy to delivery.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="process-card">
+                        <span class="process-step">1</span>
+                        <h5 class="mb-1">Visual Curation</h5>
+                        <p class="text-muted mb-0">We map the manuscript's thesis, targeted visual metaphors, and core publishing specifications before sketching.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="process-card">
+                        <span class="process-step">2</span>
+                        <h5 class="mb-1">Drafting & Inking</h5>
+                        <p class="text-muted mb-0">Drafting detailed composition layouts and refining the drawings using high-quality digital ink-wash brush systems.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mx-md-auto mx-lg-0">
+                    <div class="process-card">
+                        <span class="process-step">3</span>
+                        <h5 class="mb-1">Pre-Print Delivery</h5>
+                        <p class="text-muted mb-0">We scale, profile (CMYK/RGB), and package high-resolution vector and raster files ready for print offset press or digital screens.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Studio Visuals -->
+    <section class="home2-block">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-1">Studio <span class="text-info">Visuals</span></h2>
+                <p class="text-muted mb-0">A closer look at our drawing, rendering, and print color-profiling environment.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="home2-image-card">
+                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&fit=crop"
+                            alt="Concept sketching desk layout">
+                        <p class="home2-image-label">Concept Sketching & Inking</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="home2-image-card">
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&fit=crop"
+                            alt="Digital painting setup on tablet">
+                        <p class="home2-image-label">Digital Paint Studio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section class="home2-block">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-1">Choose Your Production Track</h2>
+                <p class="text-muted mb-0">Built for every stage of a publisher or author's campaign.</p>
+            </div>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card">
+                        <span class="package-badge">Spot Art</span>
+                        <h5>Spot Illustration</h5>
+                        <div class="package-price">$390</div>
+                        <ul class="list-unstyled package-list text-muted">
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>1 tailored concept sketch</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>Digital ink finish</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>5-day delivery</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card">
+                        <span class="package-badge">Most Popular</span>
+                        <h5>Full Feature Art</h5>
+                        <div class="package-price">$790</div>
+                        <ul class="list-unstyled package-list text-muted">
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>3 layout sketch options</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>Full color rendering</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>3-day delivery</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mx-md-auto mx-lg-0">
+                    <div class="package-card">
+                        <span class="package-badge">Elite Cover</span>
+                        <h5>Cover Story Special</h5>
+                        <div class="package-price">$1,490</div>
+                        <ul class="list-unstyled package-list text-muted">
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>5 initial sketch layouts</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>Unlimited revisions</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>Priority 48-hour delivery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section class="home2-block home2-booking-cta">
+        <div class="container">
+            <div class="cta-panel">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <h2 class="display-6 mb-3">Ready to Commission an Illustration?</h2>
+                        <p class="text-muted mb-4">Reserve an editorial strategy call today and receive a same-day production roadmap with custom sketches and layout options.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="contact.html" class="btn btn-premium btn-primary-glow px-4">Commission Project</a>
+                            <a href="pricing.html" class="btn btn-outline-info btn-premium px-4">Compare Full Pricing</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="metric-tile">
+                                    <h4 class="mb-1 text-info">24h</h4>
+                                    <small class="text-muted">First response time</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="metric-tile">
+                                    <h4 class="mb-1 text-info">98%</h4>
+                                    <small class="text-muted">Repeat clients</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="metric-tile">
+                                    <h4 class="mb-1 text-info">12k+</h4>
+                                    <small class="text-muted">Sketches created</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="metric-tile">
+                                    <h4 class="mb-1 text-info">450+</h4>
+                                    <small class="text-muted">Publishing partnerships</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 glass-panel rounded-0 footer-home-gap">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <a class="navbar-brand brand-logo text-decoration-none d-inline-block mb-4" href="index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" width="180" height="50" style="max-width: 180px; max-height: 50px;">
+                            <defs>
+                                <linearGradient id="logo-grad-foot" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4F46E5"/>
+                                    <stop offset="100%" stop-color="#FF5A5F"/>
+                                </linearGradient>
+                            </defs>
+                            <g transform="translate(5, 5)">
+                                <path d="M 5,28 C 12,24 20,28 20,28 C 20,28 28,24 35,28 L 35,16 C 28,12 20,16 20,16 C 20,16 12,12 5,16 Z" fill="none" stroke="url(#logo-grad-foot)" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M 20,16 L 20,28" stroke="url(#logo-grad-foot)" stroke-width="2"/>
+                                <path d="M 2,34 C 10,31 25,37 38,33" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M 20,6 L 24,16 L 20,26 L 16,16 Z" fill="url(#logo-grad-foot)"/>
+                                <line x1="20" y1="12" x2="20" y2="24" stroke="#FAFAFA" stroke-width="1.5"/>
+                                <circle cx="20" cy="12" r="1" fill="#FAFAFA"/>
+                            </g>
+                            <text x="50" y="28" font-family="'Manrope', sans-serif" font-size="20" font-weight="bold" fill="currentColor">InkNest</text>
+                            <text x="50" y="38" font-family="'Manrope', sans-serif" font-size="8" letter-spacing="1.5" fill="#FF5A5F" font-weight="600">STUDIO</text>
+                        </svg>
+                    </a>
+                    <p class="text-muted pe-lg-5">Bespoke editorial illustrations and book cover designs. We partner with publishers, newspapers, and authors to give every story a lasting visual voice.</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h5>Studio</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="about.html" class="text-decoration-none text-reset">About Us</a></li>
+                        <li><a href="services.html" class="text-decoration-none text-reset">Our Services</a></li>
+                        <li><a href="services.html" class="text-decoration-none text-reset">Portfolio</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-reset">Studio Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="#" class="text-decoration-none text-reset">Editorial Art</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Book Covers</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Magazines</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Art Licensing</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Newsletter</h5>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control bg-transparent border-secondary text-white"
+                            placeholder="Email">
+                        <button class="btn btn-primary-glow"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-info fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-info fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-info fs-5"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 border-secondary">
+            <div class="d-flex justify-content-between align-items-center small text-muted footer-bottom-row">
+                <p class="mb-0">&copy; 2026 InkNest Editorial Illustration Studio. All rights reserved.</p>
+                <div class="d-flex gap-4 footer-bottom-links">
+                    <a href="#" class="text-reset text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-reset text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.createWaveform) {
+                createWaveform('demo-waveform', 40);
+            }
+        });
+    </script>
+    <!-- Back to Top Button -->
+    <button onclick="scrollToTop()" id="backToTopBtn" class="btn btn-primary-glow" title="Go to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+</body>
+
+</html>
