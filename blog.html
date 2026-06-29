@@ -159,28 +159,36 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" width="180" height="50" style="max-width: 180px; max-height: 50px;">
-                <defs>
-                    <linearGradient id="logo-grad-nav" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#4F46E5"/>
-                        <stop offset="100%" stop-color="#FF5A5F"/>
-                    </linearGradient>
-                </defs>
-                <g transform="translate(5, 5)">
-                    <path d="M 5,28 C 12,24 20,28 20,28 C 20,28 28,24 35,28 L 35,16 C 28,12 20,16 20,16 C 20,16 12,12 5,16 Z" fill="none" stroke="url(#logo-grad-nav)" stroke-width="2" stroke-linejoin="round"/>
-                    <path d="M 20,16 L 20,28" stroke="url(#logo-grad-nav)" stroke-width="2"/>
-                    <path d="M 2,34 C 10,31 25,37 38,33" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M 20,6 L 24,16 L 20,26 L 16,16 Z" fill="url(#logo-grad-nav)"/>
-                    <line x1="20" y1="12" x2="20" y2="24" stroke="#FAFAFA" stroke-width="1.5"/>
-                    <circle cx="20" cy="12" r="1" fill="#FAFAFA"/>
-                </g>
-                <text x="50" y="28" font-family="'Manrope', sans-serif" font-size="20" font-weight="bold" fill="currentColor">InkNest</text>
-                <text x="50" y="38" font-family="'Manrope', sans-serif" font-size="8" letter-spacing="1.5" fill="#FF5A5F" font-weight="600">STUDIO</text>
-            </svg>
+            <a href="index.html" class="navbar-brand brand-logo text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" width="180" height="50" style="max-width: 180px; max-height: 50px;">
+                                <defs>
+                                    <linearGradient id="logo-grad-nav" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#4F46E5"/>
+                                        <stop offset="100%" stop-color="#FF5A5F"/>
+                                    </linearGradient>
+                                </defs>
+                                <g transform="translate(5, 5)">
+                                    <path d="M 5,28 C 12,24 20,28 20,28 C 20,28 28,24 35,28 L 35,16 C 28,12 20,16 20,16 C 20,16 12,12 5,16 Z" fill="none" stroke="url(#logo-grad-nav)" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M 20,16 L 20,28" stroke="url(#logo-grad-nav)" stroke-width="2"/>
+                                    <path d="M 2,34 C 10,31 25,37 38,33" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+                                    <path d="M 20,6 L 24,16 L 20,26 L 16,16 Z" fill="url(#logo-grad-nav)"/>
+                                    <line x1="20" y1="12" x2="20" y2="24" stroke="#FAFAFA" stroke-width="1.5"/>
+                                    <circle cx="20" cy="12" r="1" fill="#FAFAFA"/>
+                                </g>
+                                <text x="50" y="28" font-family="'Manrope', sans-serif" font-size="20" font-weight="bold" fill="currentColor">InkNest</text>
+                                <text x="50" y="38" font-family="'Manrope', sans-serif" font-size="8" letter-spacing="1.5" fill="#FF5A5F" font-weight="600">STUDIO</text>
+                            </svg>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navContent">
+                <div class="navbar-mobile-header">
+                    <span class="navbar-mobile-title">Menu</span>
+                    <button class="navbar-close-btn" type="button" aria-label="Close navigation">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
                 <ul class="navbar-nav mx-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
@@ -189,7 +197,7 @@
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
                 </ul>
-                <div class="navbar-nav align-items-center gap-2">
+                <div class="navbar-nav align-items-center gap-2 navbar-mobile-actions">
                     
                     <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
                         <i class="bi bi-moon-stars"></i>
@@ -202,7 +210,7 @@
         </div>
     </nav>
 
-    <section class="hero-section" style="--hero-bg: url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1600&fit=crop');">
+    <section class="hero-section" style="--hero-bg: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdk7iyo4hDRX7pfTWCbOJrhx2Tt7CbfE8TOwNzORyL6JUKSEEMA_Q3N0o&s=10');">
         <div class="hero-glow"></div>
         <div class="container">
             <div class="row align-items-center">
@@ -220,12 +228,12 @@
         </div>
     </section>
 
-    <section class="pb-5 mb-5">
+    <section class="pb-5 mb-0">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1581291518655-9523c932ebcf?w=800&fit=crop"
+                        <img src="https://m.media-amazon.com/images/I/61ZcjKY2QgL.jpg"
                             alt="Drawing Tablet" class="blog-img">
                         <div class="p-4 d-flex flex-column h-100">
                             <span class="blog-meta">Gear Guides</span>
@@ -238,7 +246,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=800&fit=crop"
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNtamWZexpCR5a3MJHs9sra_t-COOlRkja7D8y_226PNcg-JKcogusQhw&s=10"
                             alt="Books & Office" class="blog-img">
                         <div class="p-4 d-flex flex-column h-100">
                             <span class="blog-meta">Career Tips</span>
@@ -251,7 +259,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mx-md-auto mx-lg-0">
                     <div class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&fit=crop"
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7sC3PmgxHeDOIUO5Hht8JGibVN0CF2k4zDCnoFhSV057G_2wxmCaga0H-&s=10"
                             alt="Concept sketches" class="blog-img">
                         <div class="p-4 d-flex flex-column h-100">
                             <span class="blog-meta">Design Tips</span>
@@ -317,7 +325,7 @@
             <div class="spotlight-block">
                 <div class="row g-0 align-items-center">
                     <div class="col-lg-6">
-                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&h=800&fit=crop"
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrAb2AAJ2D0MSE1cVdd44-R9as_KmNbCN6hv3P5SbGYcR5xmr0u0NM6QZf&s=10"
                             alt="Artist desk spotlight" class="spotlight-img">
                     </div>
                     <div class="col-lg-6 p-4 p-lg-5">

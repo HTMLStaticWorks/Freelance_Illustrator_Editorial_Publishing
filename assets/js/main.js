@@ -77,17 +77,24 @@ function initNavbar() {
     navCollapse.addEventListener('shown.bs.collapse', showNavbarDrawer);
     navCollapse.addEventListener('hidden.bs.collapse', hideNavbarDrawer);
 
-    navbarOverlay.addEventListener('click', () => {
+    const closeNavbarDrawer = () => {
         if (!window.bootstrap || !isResponsiveViewport()) return;
         const instance = window.bootstrap.Collapse.getOrCreateInstance(navCollapse, { toggle: false });
         instance.hide();
+    };
+
+    navbarOverlay.addEventListener('click', () => {
+        closeNavbarDrawer();
     });
+
+    const closeButton = navCollapse.querySelector('.navbar-close-btn');
+    if (closeButton) {
+        closeButton.addEventListener('click', closeNavbarDrawer);
+    }
 
     navCollapse.querySelectorAll('.nav-link, .btn').forEach(link => {
         link.addEventListener('click', () => {
-            if (!window.bootstrap || !isResponsiveViewport()) return;
-            const instance = window.bootstrap.Collapse.getOrCreateInstance(navCollapse, { toggle: false });
-            instance.hide();
+            closeNavbarDrawer();
         });
     });
 

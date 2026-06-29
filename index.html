@@ -108,6 +108,7 @@
             background: rgba(255, 255, 255, 0.02);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         .category-card:hover {
@@ -117,8 +118,10 @@
         }
 
         .category-icon {
+            display: block;
             font-size: 3rem;
             margin-bottom: 1.5rem;
+            margin-inline: auto;
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
             -webkit-background-clip: text;
             background-clip: text;
@@ -195,16 +198,25 @@
             color: #ffffff !important;
         }
 
+        @media (max-width: 991.98px) {
+            .hero-section .col-lg-7 {
+                padding-inline: 1.5rem;
+            }
+        }
+
         @media (max-width: 576px) {
             .footer-bottom-row {
                 flex-direction: column;
-                align-items: flex-start !important;
+                align-items: center !important;
                 gap: 0.75rem;
+                text-align: center;
             }
 
             .footer-bottom-links {
                 flex-wrap: wrap;
                 gap: 0.5rem 1rem !important;
+                justify-content: center;
+                width: 100%;
             }
         }
     </style>
@@ -218,30 +230,38 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" width="180" height="50" style="max-width: 180px; max-height: 50px;">
-                <defs>
-                    <linearGradient id="logo-grad-nav" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#4F46E5"/>
-                        <stop offset="100%" stop-color="#FF5A5F"/>
-                    </linearGradient>
-                </defs>
-                <g transform="translate(5, 5)">
-                    <path d="M 5,28 C 12,24 20,28 20,28 C 20,28 28,24 35,28 L 35,16 C 28,12 20,16 20,16 C 20,16 12,12 5,16 Z" fill="none" stroke="url(#logo-grad-nav)" stroke-width="2" stroke-linejoin="round"/>
-                    <path d="M 20,16 L 20,28" stroke="url(#logo-grad-nav)" stroke-width="2"/>
-                    <path d="M 2,34 C 10,31 25,37 38,33" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M 20,6 L 24,16 L 20,26 L 16,16 Z" fill="url(#logo-grad-nav)"/>
-                    <line x1="20" y1="12" x2="20" y2="24" stroke="#FAFAFA" stroke-width="1.5"/>
-                    <circle cx="20" cy="12" r="1" fill="#FAFAFA"/>
-                </g>
-                <text x="50" y="28" font-family="'Manrope', sans-serif" font-size="20" font-weight="bold" fill="currentColor">InkNest</text>
-                <text x="50" y="38" font-family="'Manrope', sans-serif" font-size="8" letter-spacing="1.5" fill="#FF5A5F" font-weight="600">STUDIO</text>
-            </svg>
+            <a href="index.html" class="navbar-brand brand-logo text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 50" width="180" height="50" style="max-width: 180px; max-height: 50px;">
+                                <defs>
+                                    <linearGradient id="logo-grad-nav" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#4F46E5"/>
+                                        <stop offset="100%" stop-color="#FF5A5F"/>
+                                    </linearGradient>
+                                </defs>
+                                <g transform="translate(5, 5)">
+                                    <path d="M 5,28 C 12,24 20,28 20,28 C 20,28 28,24 35,28 L 35,16 C 28,12 20,16 20,16 C 20,16 12,12 5,16 Z" fill="none" stroke="url(#logo-grad-nav)" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M 20,16 L 20,28" stroke="url(#logo-grad-nav)" stroke-width="2"/>
+                                    <path d="M 2,34 C 10,31 25,37 38,33" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+                                    <path d="M 20,6 L 24,16 L 20,26 L 16,16 Z" fill="url(#logo-grad-nav)"/>
+                                    <line x1="20" y1="12" x2="20" y2="24" stroke="#FAFAFA" stroke-width="1.5"/>
+                                    <circle cx="20" cy="12" r="1" fill="#FAFAFA"/>
+                                </g>
+                                <text x="50" y="28" font-family="'Manrope', sans-serif" font-size="20" font-weight="bold" fill="currentColor">InkNest</text>
+                                <text x="50" y="38" font-family="'Manrope', sans-serif" font-size="8" letter-spacing="1.5" fill="#FF5A5F" font-weight="600">STUDIO</text>
+                            </svg>
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navContent">
+                <div class="navbar-mobile-header">
+                    <span class="navbar-mobile-title">Menu</span>
+                    <button class="navbar-close-btn" type="button" aria-label="Close navigation">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
                 <ul class="navbar-nav mx-auto align-items-center">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
@@ -250,7 +270,7 @@
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                 </ul>
-                <div class="navbar-nav align-items-center gap-2">
+                <div class="navbar-nav align-items-center gap-2 navbar-mobile-actions">
                     
                     <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
                         <i class="bi bi-moon-stars"></i>
@@ -283,16 +303,7 @@
                 <div class="col-lg-5 mt-5 mt-lg-0">
                     <div class="hero-cards-stack antigravity-float float-delayed-3">
                         <!-- Card 1: Artwork Preview (Behind, Top Right) -->
-                        <div class="glass-panel p-3 hero-card card-artwork position-absolute">
-                            <div class="position-relative overflow-hidden rounded-3 mb-2" style="height: 120px;">
-                                <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&fit=crop" class="w-100 h-100 object-fit-cover" alt="Editorial Sketch">
-                                <span class="position-absolute top-0 end-0 m-2 badge bg-darker-glass text-info">Draft #042</span>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center small">
-                                <span class="fw-bold">Editorial Sketch</span>
-                                <span class="text-muted">85% Processed</span>
-                            </div>
-                        </div>
+                        
 
                         <!-- Card 2: Creative Studio Status (Center) -->
                         <div class="glass-panel p-4 hero-card card-status">
@@ -313,16 +324,7 @@
                         </div>
 
                         <!-- Card 3: Color Swatches (Front, Bottom Left) -->
-                        <div class="glass-panel p-3 hero-card card-palette position-absolute">
-                            <div class="small fw-bold mb-2">Palette Selection</div>
-                            <div class="d-flex gap-2 align-items-center mb-2">
-                                <span class="color-pill" style="background: var(--accent-blue); width: 14px; height: 14px; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px var(--accent-blue);"></span>
-                                <span class="color-pill" style="background: var(--accent-purple); width: 14px; height: 14px; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px var(--accent-purple);"></span>
-                                <span class="color-pill" style="background: var(--accent-gold); width: 14px; height: 14px; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px var(--accent-gold);"></span>
-                                <span class="color-pill" style="background: var(--accent-teal); width: 14px; height: 14px; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px var(--accent-teal);"></span>
-                            </div>
-                            <div class="small text-muted" style="font-size: 0.75rem;">InkNest Editorial Studio</div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -414,7 +416,7 @@
             <div class="row g-4">
                 <div class="col-lg-7">
                     <div class="visual-mosaic-card h-100">
-                        <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&h=700&fit=crop"
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1_thJpVA_EMa_hyeh0cN8L1dvpDtf-XqxdssRoEKBVtbkuUTkGA5YBFM&s=10"
                             alt="Illustrator concept sketch on table">
                         <div class="visual-mosaic-copy">
                             <h4>Concept Sketching</h4>
@@ -426,7 +428,7 @@
                     <div class="row g-4">
                         <div class="col-12">
                             <div class="visual-mosaic-card">
-                                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&h=700&fit=crop"
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOAAkxWTazvqmY4tccX33oSD6vpuqJ_W_4c3ci_ZZBuvQgL_DHJ6pqguir&s=10"
                                     alt="Digital drawing and coloring stage">
                                 <div class="visual-mosaic-copy">
                                     <h4>High-Fidelity Rendering</h4>
@@ -436,7 +438,7 @@
                         </div>
                         <div class="col-12">
                             <div class="visual-mosaic-card">
-                                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=1000&h=700&fit=crop"
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpJ-YuXxmpM12H0b8Wb-arBmRJ67KLXUrLYpkzsQduAivd3CNRlVMrPF21&s=10"
                                     alt="Print books on desk">
                                 <div class="visual-mosaic-copy">
                                     <h4>Pre-Print Calibration</h4>
@@ -580,7 +582,7 @@
                         <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&fit=crop"
                             alt="Studio Tools" class="img-fluid rounded-4 shadow-lg antigravity-float">
                         <div
-                            class="glass-panel p-3 position-absolute bottom-0 start-0 m-4 antigravity-float float-delayed-2 d-none d-md-block text-white">
+                            class="glass-panel toolkit-print-card p-3 position-absolute bottom-0 start-0 m-4 antigravity-float float-delayed-2 text-white">
                             <h5 class="mb-0 text-white">300 DPI CMYK</h5>
                             <small class="text-white text-opacity-75">Ready for offset press print</small>
                         </div>
