@@ -109,6 +109,11 @@ h6 {
     direction: rtl;
 }
 
+[dir="rtl"] .navbar .navbar-brand {
+    margin-right: -40px !important;
+    margin-left: 0 !important;
+}
+
 .ms-auto {
     margin-inline-start: auto !important;
     margin-inline-end: 0 !important;
@@ -634,7 +639,9 @@ footer .text-info.fs-5:focus-visible {
         line-height: 1;
     }
 
-    .navbar-mobile-actions {
+    .navbar .navbar-mobile-actions {
+        flex-direction: row !important;
+        align-items: center !important;
         margin-top: auto;
         padding-top: 1rem;
         padding-inline: 0.85rem;
@@ -1243,19 +1250,19 @@ footer .text-info.fs-5:focus-visible {
         padding-inline: 1rem;
     }
 
-    .hero-card.card-status,
+    .hero-card.card-artwork,
     .hero-card.card-palette {
         display: none !important;
     }
 
-    .hero-card.card-artwork {
+    .hero-card.card-status {
         position: relative !important;
         width: 100% !important;
-        max-width: 280px !important;
+        max-width: 340px !important;
         margin: 0 auto !important;
         transform: none !important;
         top: 0 !important;
-        right: 0 !important;
+        left: 0 !important;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3) !important;
     }
 
